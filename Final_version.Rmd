@@ -55,11 +55,11 @@ packages <- lapply(packages, FUN = function(x) {
 
 
 ```{r, message = FALSE, warning = FALSE, echo=FALSE}
-df = read.csv("wage.csv")
-walmart = read.csv("walmart.csv")
-target = read.csv("target.csv")
-geo = read.csv("states.csv")
-unemploy_2020 <- read_excel("unemploy_2020.xlsx")
+df = read.csv("D:/Github/Group_states/wage.csv")
+walmart = read.csv("D:/Github/Group_states/walmart.csv")
+target = read.csv("D:/Github/Group_states/target.csv")
+geo = read.csv("D:/Github/Group_states/states.csv")
+unemploy_2020 <- read_excel("D:/Github/Group_states/unemploy_2020.xlsx")
 ```
 
 
@@ -96,7 +96,7 @@ content <- paste("State:",df_2020$State,"<br/>",
 
 ```{r, echo=FALSE, out.width = "100%"}
 df_2020 <- df %>% filter(Year==2020)
-unemploy_2020 <- read_excel("unemploy_2020.xlsx")
+unemploy_2020 <- read_excel("D:/Github/Group_states/unemploy_2020.xlsx")
 # add unemployment data
 df_2020 <- left_join(df_2020, unemploy_2020, by=c("State" = "State"))
 s <- map_data('state')
@@ -237,6 +237,15 @@ wage_prep +
             size = 15) 
 ```
 
+```{r fig.height=6}
+# Moving chart to show the rank
+library(gganimate)
+wage_to_move + gganimate::transition_time(Year)
+# There are 19 states in the label because only these 19 states made it to the top 5 from 1968 to 2020
+```
+
+
+
 
 
 
@@ -247,7 +256,7 @@ wage_prep +
 
 ```{r, echo=FALSE, out.width = "100%"}
 df_2019 <- df %>% filter(Year==2019)
-unemploy_2019 <- read_excel("unemploy_2019.xlsx")
+unemploy_2019 <- read_excel("D:/Github/Group_states/unemploy_2019.xlsx")
 unemploy_2019$State <- tolower(unemploy_2019$State)
 # add unemployment data
 df_2019 <- left_join(df_2019, unemploy_2019, by=c("State" = "State"))
@@ -314,7 +323,7 @@ map_target <- leaflet(target) %>%
 # Scatter Plot 1: Unemployment Rates in All States in 2016
 ```{r}
 # scatter plot in 2016(all states)
-cces=read.csv("unemployall.csv")
+cces=read.csv("D:/Github/Group_states/unemployall.csv")
 cces <- rename(cces, c( "State" = "ï..State" ))
 ggplot(cces, aes(x = State, y = Unemployment.Rate_2016)) +
   geom_point(position = "jitter", alpha=0.5)+
