@@ -1,6 +1,7 @@
 # Group P Labor Market Process Book
 
 Members:
+
 Ming Nie (mn2984) 
 Chujun Zhao (cz2621) 
 Edmund Lam (ecl2169) 
