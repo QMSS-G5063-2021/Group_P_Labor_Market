@@ -19,6 +19,9 @@ The data of labor statistics come from the National Census Bureau. The variables
 
 ## Visualization
 
+### Barplot 
+The barplot was created with plotly using minimum wage statistics from the bureau of labor statistics. It shows percentage of workers earning minimum wage in each group. It has 2 facets for different age groups and gender is mapped onto the colors of the bars.
+
 ### Map 1
 
 The variables I used for this plot include state name, unemployment rate, state minimum wage and federal minimum wage. The longitude and latitude are generated using geocode and google cloud API. I used leaflet package and added content by using `addCircleMarkers()`.
